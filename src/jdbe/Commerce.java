@@ -154,4 +154,32 @@ public class Commerce {
 		ps.execute();
 	}
 
+	public Map<Integer, String> requete1() throws SQLException {
+		Map<Integer, String> res = new HashMap<>();
+		str = "select * from produit order by desiprod;";
+		st = cnx.createStatement();
+		rs = st.executeQuery(str);
+		
+		while (rs.next()) {
+			System.out.println("Numéro: " + rs.getInt("refprod") + " Produit: " + rs.getString("desiprod"));
+			res.put(rs.getInt("refprod"), rs.getString("desiprod"));
+		}
+		return res;
+	}
+
+	public Map<Integer, String> requete2() throws SQLException {
+		Map<Integer,String> res = new HashMap<>();
+		str = "select * from produit where refprod < 15;";
+		st = cnx.createStatement();
+		rs = st.executeQuery(str);
+		
+		while (rs.next()) {
+			System.out.println("Numéro: " + rs.getInt("refprod") + " Produit: " + rs.getString("desiprod"));
+			res.put(rs.getInt("refprod"), rs.getString("desiprod"));
+		}
+		return res;
+	}
+
+	
+
 }

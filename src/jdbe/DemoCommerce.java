@@ -16,6 +16,9 @@ public class DemoCommerce {
 //		c.insererData();
 		
 		
+		//c.requete1();
+		//c.requete2();
 		
+	
 	}
 }
